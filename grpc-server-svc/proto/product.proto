@@ -1,0 +1,18 @@
+syntax = "proto3";
+package product;
+
+option go_package = "mango.im/grpc-lp/api";
+
+service ProductService {
+  rpc GetProduct(GetProductRequest) returns (GetProductResponse);
+}
+
+message GetProductResponse {
+  string name = 1;
+  string description = 2;
+  double price = 3;
+}
+
+message GetProductRequest {
+  string productId = 1;
+}
